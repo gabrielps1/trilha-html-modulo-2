@@ -1,39 +1,261 @@
 html, body {
     margin: 0;
-}
-body {
-    background-color: #f1f1f1;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Remove rolagem horizontal */
+    background-color: #e6f0fa; /* Fundo azul suave */
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Organiza os elementos em coluna */
 }
 
 .wrapper {
-    width: 1200px;
+    width: 100%; /* Ocupa 100% da largura da tela */
+    margin: 0;
     display: flex;
-    margin: 0 auto;
-    background-color: aquamarine;
+    flex-direction: column; /* Organiza elementos filhos em coluna */
+    flex: 1; /* Expande para preencher o espaço disponível */
+    background-color: rgb(247, 247, 247);
 }
+
 .main {
     display: flex;
-    flex-flow: column;
-    width: 85%;
+    flex-direction: column;
+    flex: 1; /* Expande a seção principal para ocupar o espaço restante */
 }
+
 .menu {
     width: 15%;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     padding: 10px 20px 0px;
 }
+
 .header {
-    min-height: 150px;
-    background-color: #f1f1f1;
-}
-.content {
-    background-color: rgb(188, 227, 245);
-    min-height: 300px;
-    padding: 20px;
-}
-.footer {
     display: flex;
-    background-color: rgb(188, 227, 245);
+    flex-direction: column; /* Organiza os itens na vertical */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
     min-height: 150px;
+    background-color: #d9edf7;
+    width: 100%; /* Ocupa toda a largura */
+    padding: 20px; /* Para dar um pouco de espaçamento interno */
+}
+
+.header h1 {
+    margin: 0; /* Remove margens padrão */
+    color: #2c3e50;
+    font: bold 24px Arial, sans-serif;
+    text-align: center;
+    margin-left: -32px;
+}
+
+.header img {
+    width: 50px;
+    height: auto;
+    margin-top: 30px; /* Espaço entre o título e a imagem */
+    margin-left: -30px;
+}
+
+.content {
+    background-color: #d9edf7;
+    min-height: 300px;
+    color: #2c3e50;
+    text-align: center;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    flex: 1; /* Expande para ocupar o espaço disponível */
+}
+
+h2
+{
+    margin-top: 20px; /* Espaçamento acima */
+    margin-bottom: 10px; /* Espaçamento abaixo */
+    text-align: center; /* Centralizar os títulos */
+    color: #2c3e50; /* Cor mais escura para contraste */
+}
+
+p {
+    margin-bottom: 20px; /* Espaçamento entre parágrafos */
+    line-height: 1.6; /* Melhor espaçamento entre linhas */
+}
+
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 90%; /* Ajustar a largura */
+    max-width: 600px; /* Limitar o tamanho máximo */
+}
+
+
+.horarios {
+    width: 100%;
+    border-collapse: collapse; /* Junta as bordas */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.horarios th, .horarios td {
+    border: 1px solid #ddd; /* Borda entre as células */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Alinha o texto */
+}
+
+.horarios th {
+    background-color: #2c3e50; /* Fundo do cabeçalho */
+    color: white; /* Cor do texto no cabeçalho */
+}
+
+.horarios tr:nth-child(even) {
+    background-color: #f4fafd; /* Fundo das linhas pares */
+}
+
+.horarios tr:hover {
+    background-color: #d9edf7; /* Efeito hover */
+}
+
+.imagem-container {
+    display: flex; /* Habilita o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: auto; /* Ajuste automático para a altura do conteúdo */
+    margin: 0; /* Remover margens */
+    padding: 0; /* Remover padding */
+    background-color: rgb(177, 209, 241);
+}
+
+.imagem-link {
+    position: absolute; /* Posiciona a seta sobre o texto */
+    top: -20px; /* Ajuste para a seta ficar um pouco acima da palavra 'Sobre' */
+    left: 50%; /* Centraliza horizontalmente em relação ao contêiner */
+    transform: translateX(-50%); /* Garante que a seta fique perfeitamente centralizada */
+    width: 30px; /* Ajuste o tamanho da seta */
+    height: auto;
+}
+
+/* Novo contêiner para 'Sobre' e a seta */
+.sobre-container {
+    position: relative; /* Necessário para posicionar a seta de forma absoluta em relação a este contêiner */
+    display: inline-block; /* Ajusta a largura da div ao conteúdo */
+    font-size: 24px; /* Tamanho da palavra 'Sobre' */
+    font-weight: bold;
+    padding: 10px;
+    text-align: center; /* Para centralizar o conteúdo dentro da div */
+    margin-left: -30px;
+    
+}
+
+.footer {
+    background-color: rgb(177, 209, 241);
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espaço entre os elementos */
+}
+
+.back-to-top img {
+    width: 30px; /* Tamanho da seta */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.footer-links {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaço entre os links */
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #ffffff; /* Cor do texto */
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #f1ecd8; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Leve aumento */
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 0.8rem; /* Tamanho menor para o texto de direitos reservados */
+}
+
+
+label {
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Aplica negrito */
+    color: #2c3e50; /* Define uma cor escura para contraste */
+    display: block; /* Coloca os labels em uma nova linha */
+    margin-bottom: 5px; /* Adiciona espaço abaixo dos labels */
+}
+
+
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%; /* O campo ocupará toda a largura disponível */
+    height: 50px; /* Ajuste a altura conforme necessário */
+    padding: 0; /* Remove o espaçamento interno padrão */
+    border: 1px solid #ccc; /* Borda ao redor do campo */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza verticalmente o texto */
+    justify-content: center; /* Opcional: também centraliza texto para alinhamento horizontal */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Aparência interna suave */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.button {
+    background-color: rgb(127, 195, 240); /* Cor de fundo */
+    width: 20%; /* Largura do botão relativa ao contêiner pai */
+    padding: 10px 15px; /* Espaçamento interno para um tamanho confortável */
+    border: none; /* Remove qualquer borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto mais destacado */
+    cursor: pointer; /* Mostra o cursor de mão ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adiciona animação suave */
+    margin-top: 40px;
+}
+
+.button:hover {
+    background-color: rgb(100, 170, 230); /* Cor ao passar o mouse */
+    transform: scale(1.02); /* Leve aumento no tamanho ao passar o mouse */
+}
+
+.button:active {
+    background-color: rgb(80, 150, 220); /* Cor ao clicar */
 }
